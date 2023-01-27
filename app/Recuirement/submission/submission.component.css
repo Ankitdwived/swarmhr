@@ -1,0 +1,13 @@
+.example-container {
+    height: 330px;
+    overflow: auto;
+  }
+  
+  table {
+    width: 100%;
+   } .ak{
+        position:fixed;
+        margin-bottom: 25%;
+        margin-left: 55%;
+        border-color: brown;
+      }

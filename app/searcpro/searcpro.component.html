@@ -1,0 +1,55 @@
+<!--Font Awesome Icons-->
+<div class="jumbotron">
+  <div class="col-md-10 offset-md-1">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 mb-3">
+        <p class="card-text mt-5" style="text-align:center;">Search by Keywords </p>
+        <form  novalidate autocomplete="off">
+          <div class="search mt-3">
+            <input class="searchTerm form-control"  formControlName="keyword"
+              type="text" maxlength="150" placeholder="Search by Keywords">
+            <button type="submit" class="searchButton"> Search </button>
+          </div>
+        </form>
+      </div>
+      <div class="col-md-1 mt-5">
+        <label>&nbsp;</label>
+        <i class="material-icons mt-5" ngbTooltip="Help for Keyword Search" placement="bottom" tooltipClass="country-custom-class" style="cursor: pointer;"
+         >help_outline</i>
+      </div>
+    </div>
+      <div  class="col-md-6 offset-md-4" style="font-size: small; color: navy;">
+        <label class="white-space: pre-line">Try search inputs like below...
+          <br />Java MySql
+          <br />Java or Angular or C++
+          <br />Java and C# and Kubernetes
+          <br />Java and C++ or Network Architect
+          <br />Java,QA
+          <br />'Java'&'C++'</label>
+      </div> <p style="text-align:center;padding-top: 50px;"><b>or</b></p>
+      <p style="text-align:center;padding-top: 30px" class="card-text">Search by Category </p>
+      <div class="row mt-3 mb-5">
+        <div class='col-md-12 mb-5'>
+          <form  novalidate autocomplete="off">
+            <div class="input-group">
+              <input formControlName="jobTitles"  type="text"
+                class="form-control" placeholder="Job Titles *" />
+              <input formControlName="loc"  type="text" class="form-control"
+                placeholder="Location" />
+              <input formControlName="skills"  type="text" class="form-control"
+                placeholder="Job Skillss">
+              <input formControlName="companies"  type="text"
+                class="form-control" placeholder="Company name">
+              <input formControlName="colleges" type="text"
+                class="form-control" placeholder="Education">
+              <input formControlName="mintotExp" style="max-width: 5%;" type="text" appNumberOnlyValidation="integer"
+              class="form-control" min="1" placeholder="Min" maxlength="2" pattern="^[1-9][0-9]*$" oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"/>	
+              <input formControlName="maxtotExp" type="text" style="max-width: 5%;" appNumberOnlyValidation="integer"	
+              class="form-control" min="1" placeholder="Max" maxlength="2" pattern="^[1-9][0-9]*$" oninput="if(!this.value.match('^[1-9][0-9]*$'))this.value='';"/>
+              <button type="submit" class="searchButton">Search</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>

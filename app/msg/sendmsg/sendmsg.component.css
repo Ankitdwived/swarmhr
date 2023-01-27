@@ -1,0 +1,45 @@
+.send-sms-btn {
+    float: left;
+    padding-top: 25px;
+    color: #2ecc71;
+    position: relative;
+   
+    background: none;
+    border: 0;
+}
+
+.text-recruiter-body {
+    min-height: 200px;
+    max-height: calc(100vh - 300px);
+}
+
+  .line-input {
+    border: none;
+    font-size: 14px;
+    border-bottom: 1.6px solid #ededed !important; 
+    padding-bottom: 4px;
+    margin-bottom: -5px;
+    font-family: 'Proxima Nova', Georgia, sans-serif;
+    
+    }
+    
+    
+    .line-input:focus,.line-input:focus {
+    border: none !important;
+    
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom: 1.5px solid #59a9ef !important;;
+   
+    }
+   
+
+label {
+    margin: 0;
+    width: 160%;
+    min-width: 100px;
+    font-size: 15.6px;
+    padding-bottom: 4px;
+    position: relative;
+    border-bottom: 1.5px solid #ededed;
+}

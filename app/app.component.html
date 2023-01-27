@@ -1,0 +1,329 @@
+
+  <div class="jumbotron"*ngIf="show" >
+    <div class="row">
+        <div class="container">
+           <!--<div class="col-md-8 offset-md-2" *ngIf='authKey'>
+    
+            </div>-->
+            <div class="col-lg-4 offset-md-4 offset-lg-4 col-sm-6 col-md-4">
+                <div align="center">
+                    <a style="margin-top:-8px;" href="https://www.swarmhr.com"><img src="assets/logoWebApp.png" alt="SWARM HR"/></a>
+                    <h3  style="padding-top:24px;padding-bottom:6px">Sign in</h3>
+                </div>
+    
+                    <form [formGroup]="frmm" (ngSubmit)="Login()">
+                        <div class="form-group">
+                            <label for="name">Username</label>
+                            <input type="text" formControlName="name" class="form-control"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" formControlName="password" class="form-control" 
+                           >
+                        </div>
+                        <div class="form-group">
+                            <button  class="btn btn-primary">Login</button>
+                            <!-- <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /> -->
+                            <!--<a style="float:right;padding-top:14px;" routerLink="" class="btn btn-link">Forgot Password</a>-->
+                        </div>
+                    </form>
+            </div>
+            <div>
+                <p style="text-align:center;margin-bottom:-37px;margin-top:54px;">By signing in, you agree to our <a href="https://www.swarmhr.com/terms" target="_blank">Terms of Usage</a> and accept our <a href="https://www.swarmhr.com/privacy" target="_blank">Privacy Policy</a>.</p>
+            </div> 
+        </div>
+    </div>
+    <div class="footer text-center">
+      <p><a href="https://app.swarmhr.com/signin" target="_blank">ATS Application - SWARM HR</a></p>
+      <p><a href="https://www.swarmhr.com" target="_blank">www.swarmhr.com</a></p>
+  </div>
+</div>
+<!-- credits -->
+
+<div>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark" >
+  <a class="navbar-brand" href="javascript:void(0)">
+    <img  src="assets/ats-logo.png" />
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+    aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarText" style="height: 40px;">
+    <ul class="navbar-nav mr-auto">
+      <li class="nav-item">
+        <a class="nav-link" routerLink="searc">Search profile</a>
+      </li>
+     
+      <li class="nav-item">
+        <a class="nav-link"
+        routerLink="customer">Customer</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLink="requirement">Recruitment</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link"routerLink="customer">customer</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="hotl">HotList</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="login">Social-Media</a>
+      </li>
+      <ul class="top-level-menu">
+        <li style="width: 60px !important;">
+          <a style="cursor:pointer;font-size: 12.5px;padding: 3px 10px;
+           font-family: 'Proxima Nova', Georgia, sans-serif !important;">Reports</a>
+            <ul class="second-level-menu-report">
+              <div class="row">
+                <div class="col-md-4" style="max-width: 25%;">
+                  <!-- <h6 style="color: #fff ;">Recruitment</h6> -->
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Call Report</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Profile Migration Report</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;">Profile Search Report</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;">Bulk Email Report</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;">CPES Report</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;">Desktop Monitor Report</a>
+                 </li>
+                </div>
+                <div class="col-md-4">
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Published Requirement</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Social Posts</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >ATS Report</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Unsubscribe Emails</a>
+                 </li>                
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;">AccountManger Vs Submissions(Jobs Based)</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Recruitment Client Summary Report</a>
+                 </li>
+                </div>
+                <div class="col-md-4">
+                  <!-- <h6 style="color: #fff;">Sales</h6> -->
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Recruitment Summary Report</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Recruitment Report</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;">Client Vs Jobs</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;">Job With Zero Submissions</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;">Recruiter Daily Submissions</a>
+                 </li>
+                 <li>
+                   <a style="font-size: 13px !important;
+                   font-family: 'Proxima Nova' !important; cursor: pointer;" >Account Manager Vs Client (By Submissions)</a>
+                 </li>
+                </div>
+              </div>
+            </ul>
+        </li>
+      </ul>
+</ul>
+
+<ul class="nav navbar-nav navbar-right" style="margin-top:2px; margin-right: -5px;">
+  <li class="nav-item">
+    <a class="nav-link" routerLink="/internal-search" routerLinkActive="active" tooltipClass="search-custom-class"
+      ngbTooltip="Advance Search">
+      <img src="assets/img/search.svg" style="width:17px;margin-right:4px">
+    </a>
+  </li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right" style="margin-top: 5px;">
+  <li class="nav-item">
+    <a class="nav-link" class="btn btn-lg" routerLink="/employee-dashboard" routerLinkActive="active"
+      style="cursor:pointer;color: white;color: white;margin: 0;" tooltipClass="search-custom-class"
+      ngbTooltip="Dashboard">
+      <img src="assets/img/ic_nav_dashboard.png" style="width:16px;margin-bottom: 2.5px;" />
+    </a>
+  </li>
+</ul>
+
+<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+  <ul style="float: left;width: 10px;" class="top-level-menu">
+    <li style="margin-top: -1px;height:33px;width:35px;background: #192a56;">
+      <a class="nav-link" class="btn btn-lg" style="cursor:pointer;">
+        <img src="assets/img/sms.svg" style="width:19px;margin-bottom:5px;">
+      </a>
+      <ul class="second-level-menu">
+        <li>
+          <a style="cursor:pointer; font-size: 12px !important; font-family: 'Proxima Nova' !important;"  (click)="sendmsg()" >Send SMS</a>
+        </li>
+        <li>
+          <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova'!important;">SMS Job</a>
+        </li>
+        <li>
+          <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova'!important;">SMS History</a>
+        </li>
+      </ul>
+    </li>
+  </ul>
+</ul>
+
+<ul class="nav navbar-nav navbar-right" style="margin-right: 20px;">
+  
+    <ul style="float: left;" class="top-level-menu1">
+      <li style="margin-bottom:2px;height:27px;width:0px;position: relative;background: #192a56;">
+        <a class="nav-link" class="btn btn-lg" style="cursor:pointer;color: white;margin: 0;">
+          <i style="font-size:20px; margin-left:-27px;" class="fas fa-envelope"></i>
+        </a>
+        <ul class="second-level-menu1">
+          <li>
+            <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova' !important; " >Send
+              Email</a>
+          </li>
+          <li>
+            <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova' !important;" >Email
+              History</a>
+          </li>
+          <li>
+            <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova' !important;" >Mailing
+              List</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  
+</ul>
+<ul class="nav navbar-nav navbar-right"style="margin-right: 20px;">
+  <li  style="padding-left: 10px;padding-top: 4px;">
+    <a style="margin: 0;" data-toggle="dropdown" ngbTooltip="Country Switch" href="#countryFlagMenu" aria-controls="countryFlagMenu" >
+      <i class="fa fa-cog" aria-hidden="true" ngbTooltip="Country Switch" style="font-size:20px;color:white"></i>
+    </a>
+  
+  </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"style="margin-right: 20px;">
+  <li class="dropdown" style="padding-left: 10px;padding-top: 4px;">
+    <a style="margin: 0;" data-toggle="dropdown" href="#countryFlagMenu" aria-controls="countryFlagMenu" >
+       <i class="fa fa-flag" aria-hidden="true"style="font-size:20px;color:white"></i>
+    </a>
+  
+  </li>
+</ul>
+<ul class="nav navbar-nav navbar-right"style="margin-right: 20px;">
+  <li class="dropdown" style="padding-left: 10px;padding-top: 4px;">
+    <a style="margin: 0;" data-toggle="dropdown" href="#countryFlagMenu" aria-controls="countryFlagMenu" >
+      <i class="fa fa-user-circle-o" aria-hidden="true" style="font-size:20px;color:white"></i>    </a>
+  
+  </li>
+</ul>
+
+
+
+</div></nav></div>
+      <!--
+      <ul class="nav navbar-nav navbar-right" style="margin-top:2px; margin-right: -5px;">
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/internal-search" routerLinkActive="active" tooltipClass="search-custom-class"
+            ngbTooltip="Advance Search">
+            <img src="assets/img/search.svg" style="width:17px;margin-right:4px;">
+          </a>
+        </li>
+      </ul>
+  
+      <ul class="nav navbar-nav navbar-right" style="margin-top: 5px;">
+        <li class="nav-item">
+          <a class="nav-link" class="btn btn-lg" routerLink="/employee-dashboard" routerLinkActive="active"
+            style="cursor:pointer;color: white;color: white;margin: 0;" tooltipClass="search-custom-class"
+            ngbTooltip="Dashboard">
+            <img src="assets/img/ic_nav_dashboard.png" style="width:16px;margin-bottom: 2.5px;" />
+          </a>
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-left: 30px;">
+        <ul style="float: left;width: 10px;" class="top-level-menu">
+          <li style="margin-top: -1px;height:33px;width:35px;background: #192a56;margin-left: 280px;">
+           
+            <a class="nav-link" class="btn btn-lg" style="cursor:pointer;">
+              <img src="assets/img/sms.svg" style="width:19px;margin-bottom:5px;">
+            </a>
+            <ul class="second-level-menu">
+              <li>
+                <a style="cursor:pointer; font-size: 12px !important; font-family: 'Proxima Nova' !important;" (click)="sendmsg()">Send SMS</a>
+              </li>
+              <li>
+                <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova'!important;" >SMS Job</a>
+              </li>
+              <li>
+                <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova'!important;" >SMS History</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        
+      </ul>
+      <ul class="nav navbar-nav navbar-right" style="margin-left: 30px;">
+        <ul style="float: left;width: 10px;" class="top-level-menu">
+          <li style="margin-top: -1px;height:33px;width:35px;background: #192a56;margin-left: 280px;">
+           
+            <a class="nav-link" class="btn btn-lg" style="cursor:pointer;">
+              <i class="fa fa-envelope" style="font-size:18px;color:white"></i>
+
+            </a>
+            <ul class="second-level-menu">
+              <li>
+                <a style="cursor:pointer; font-size: 12px !important; font-family: 'Proxima Nova' !important;" (click)="sendmsg()">Send SMS</a>
+              </li>
+              <li>
+                <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova'!important;" >Email History</a>
+              </li>
+              <li>
+                <a style="cursor:pointer;font-size: 12px !important; font-family: 'Proxima Nova'!important;" >Mailing list</a>
+              </li>
+            </ul>
+          </li>
+        </ul>
+        
+      </ul>
+    </ul>
+    </div></nav>
+</div>-->
+<router-outlet></router-outlet>

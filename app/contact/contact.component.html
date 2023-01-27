@@ -1,0 +1,244 @@
+<div class="container-fluid" style="background-color:#ecf0f1"><div class="row" >
+  <div class="search" class="col-lg-6 col-md-6 col-sm-12 prc1">
+      <input type="text" class="form-control search-slt" id="search"  placeholder="Search..." search (keyup)="applyFilter($event )" #input>
+  </div>
+<div class="col-md-4">
+  
+</div></div></div>
+<div class="row">
+<div class="col-md-3" style="margin-top:2px !important;">
+  <a class="btn btn-primary" type="button" [matMenuTriggerFor]="menu"style="font-size: 10px;">Download</a>
+  <mat-menu #menu="matMenu">
+      <button mat-menu-item (click)="exportDirective.exportTable('csv',{fileName:'SWARMHR ATS-Vendors'})">
+<img src="assets/img/tabs/file.svg" style="width:28px;margin-left:-3px;" />Download CSV
+</button>
+      <button mat-menu-item (click)="exportDirective.exportTable('xlsx',{fileName:'SWARMHR ATS-Vendors',sheet:'SWARMHR-ATS-Vendors-1'})">
+<img style="width:28px;margin-left:-3px;" src="assets/img/tabs/file.svg" />Download Excel
+</button>
+      <button mat-menu-item (click)="exportDirective.exportTable('xls',{fileName:'SWARMHR ATS-Vendors',sheet:'SWARMHR-ATS-Vendors-1'})">
+<img style="width:28px;margin-left: -3px;" src="assets/img/tabs/file.svg" />Download XLS
+</button>
+      <button mat-menu-item (click)="exportDirective.exportTable('txt',{fileName:'SWARMHR ATS-Vendors'})">
+<img style="width: 28px;margin-left:-3px;" src="assets/img/tabs/file.svg" />Download TXT
+</button>
+  </mat-menu></div>
+  <div class="col-sm-6">
+    
+  
+  </div>
+  <div class="col-sm-3">  
+    <select id="selectionType" name="selectionType" class="select-control1 search-slt" style="width:150px; height: 30px;" #selectVale >
+    <option *ngFor="let selectType of venRequestType  " [value]="selectType"> {{selectType}}
+    </option>
+</select>
+
+<button type="button" class="btn btn-primary add-recruitment-btn" (click)="addVendor()" style="font-size: 10px; "><b>+</b>&nbsp;Candidate </button>
+
+
+  </div>
+</div>
+<section class="example-container mat-elevation-z8" tabindex="0">
+
+<table mat-table matTableExporter [dataSource]="datasource" #exportDirective="matTableExporter" matSort>
+
+<!-- Position Column -->
+<ng-container matColumnDef="id">
+  <th style="background-color: #ecf0f1;" mat-header-cell *matHeaderCellDef mat-sort-header> No. </th>
+  <td mat-cell *matCellDef="let data"> {{data.id}} </td>
+</ng-container>
+
+<!-- Name Column -->
+<ng-container matColumnDef="name">
+  <th style="background-color: #ecf0f1;" mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+  <td mat-cell *matCellDef="let data"> {{data.name}} </td>
+</ng-container>
+
+<!-- Weight Column -->
+<ng-container matColumnDef="add">
+  <th style="background-color: #ecf0f1;" mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+  <td mat-cell *matCellDef="let data"> {{data.add}} </td>
+</ng-container>   <ng-container matColumnDef="country">
+  <th style="background-color: #ecf0f1;" mat-header-cell *matHeaderCellDef mat-sort-header> country </th>
+  <td mat-cell *matCellDef="let data"> {{data.country}} </td>
+</ng-container>
+
+
+<!-- Symbol Column -->
+<ng-container matColumnDef="phno">
+  <th style="background-color: #ecf0f1;" mat-header-cell *matHeaderCellDef mat-sort-header> Mobile No. </th>
+  <td mat-cell *matCellDef="let data"> {{data.phno}} </td>
+</ng-container>
+<ng-container matColumnDef="phno2">
+  <th style="background-color: #ecf0f1;" mat-header-cell *matHeaderCellDef mat-sort-header> Mobile No2. </th>
+  <td mat-cell *matCellDef="let data"> {{data.phno2}} </td>
+</ng-container>
+
+<ng-container matColumnDef="Action">
+  <th style="background-color: #ecf0f1;" mat-header-cell *matHeaderCellDef mat-sort-header>Action</th>
+  <td mat-cell *matCellDef="let data">
+    <a class="btn btn-info btn-xs" (click)="editAction(data)"
+    ><i class="fa fa-edit" ngbTooltip="Reshare" placement="bottom" tooltipClass="search-custom-class"></i></a>&nbsp;
+    <button style="background-color:blue" (click)="delet(data.id)"><i class="fa fa-trash" aria-hidden="true"></i>
+    </button>
+   
+  </td>
+</ng-container>
+<tr mat-header-row *matHeaderRowDef="displayColumn; sticky: true"></tr>
+<tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
+</table>
+</section>    <mat-paginator [pageSizeOptions]="[8,10,20]" aria-label="select page of user" class="page"></mat-paginator>
+
+
+
+<div class="container-fluid" style="margin-top: -30px;" *ngIf="sho"><br>
+<div class="row">
+<div class="col-sm-4">
+<h4 style="width:50%;margin-top: 10px;">Add Customer</h4></div>
+<div class="col-sm-8">
+<button mat-button mat-dialog-close class="btn btn-success" style="margin-left: 95%;"><i class="fa fa-times" aria-hidden="true"></i></button> 
+</div>
+</div>
+<br>
+
+<p class="semi-title"><span >Customer Details</span></p>
+<div class="card">
+ <div class="container">
+<form [formGroup]="frmg">name:
+<input type="text" name="name" formControlName="name">
+ <div class="candScroll">
+<div class="form-row-des">
+ <div class="col-12">
+   <label class="required">Customer Name</label>
+ </div>
+ <div class="col-md-4">
+  <input class="line-input1 required" name="name" matInput formControlName="name" maxlength="20">
+   <div *ngIf="submitted && f['name'].errors?.['required']">*Name is required.</div>
+
+     </div>
+
+ <div class="col-8"></div>
+
+</div>
+
+
+ 
+ <div class="form-row-des">
+ <div class="col-12">
+   <label class="required">Phone number 1</label>
+ </div>
+ <div class="col-md-4">
+   <input class="line-input1 required" matInput appPhoneMask formControlName="phno" maxlength="12" >
+   <div *ngIf="submitted && f['phno'].errors?.['required']">*phno is required.</div>
+
+   </div>
+
+
+
+
+ <div class="col-8"></div>
+
+ <div class="col-12">
+   <label>Phone number 2</label>
+ </div>
+ <div class="col-md-4">
+   <input class="line-input1" type="tel" matInput appPhoneMask formControlName="phno2"
+   [ngClass]="{ 'is-invalid': submitted && f['phno2'].errors }" maxlength="12" 
+   oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+   <div *ngIf="submitted && f['phno2'].errors?.['required']">*phno2 is required.</div>
+
+  </div>
+</div>
+
+
+
+<p class="semi-title"><span style="margin-left: 10px;">Address</span></p>
+
+
+ 
+<div class="form-row-des customLine">
+ <div class="col-12"><label class="required">Country</label></div>
+ <div class="col-md-4">
+     <div class="text-full-width"  floatPlaceholder="never" style="width: 100%;margin-top:-9px;font-size: 13px;">
+       <mat-select [disabled]="true" formControlName="country"  
+         (selectionChange)="changeCountry($event)" placeholder="Select Country" style="margin-top: -9px;">
+         <!-- <mat-option value="0">Select a Country</mat-option> -->
+         <mat-option *ngFor="let count of countryList" [value]="count.name">{{count.name}} </mat-option>
+
+       </mat-select>       
+          <div *ngIf="submitted && f['country'].errors?.['required']">*country is required.</div>
+
+     </div>
+   </div>
+
+<div class="col-8"></div>
+<div class="col-12"><label class="required">State</label></div>
+<div class="col-md-4">
+ <div class="text-full-width" floatPlaceholder="never" style="width: 100%;margin-top:-9px;font-size: 13px;">
+   <mat-select formControlName="state" placeholder="Select State" style="margin-top: -9px;">
+     <!-- <mat-option checked value="0">Select a state</mat-option> -->
+     <mat-option *ngFor="let state of states" [value]="state">{{state}} </mat-option>
+
+   </mat-select>
+   <div *ngIf="submitted && f['state'].errors?.['required']">*state is required.</div>
+
+</div>      </div>
+
+
+   
+ </div>
+ <div class="form-row-des customLine">
+     <div class="col-12"><label class="required">City</label></div>
+         <div class="col-md-4">
+           <input class="line-input1"  matInput formControlName="city" maxlength="30">
+             <div *ngIf="submitted && f['city'].errors?.['required']">*city is required.</div>
+
+          </div>
+          <div class="col-8"></div>
+   <div class="col-12"><label class="required">Street Address</label></div>
+   <div class="col-md-4">
+     <input class="line-input" matInput formControlName="add" maxlength="80">
+     <div *ngIf="submitted && f['add'].errors?.['required']">*add is required.</div>
+
+    </div>
+</div>
+
+
+ 
+<div class="form-row-des customLine">
+ <div class="col-12"><label class="required">Zipcode/Pincode</label></div>
+     <div class="col-md-4">
+       
+
+       <input class="line-input1" maxlength="10" matInput formControlName="zipcode"
+       oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');">
+       <div *ngIf="submitted && f['zipcode'].errors?.['required']">*zipcode is required.</div>
+
+       
+      </div>
+     
+</div>
+
+
+
+<p class="semi-title"><span style="margin-left: 10px;">Customer Notes</span></p>
+<div class="form-notes-row">
+ <div class="col-12"><span>Customer Notes</span></div>
+ <div class="col-md-12" style="padding:0px 4px;margin-left:1.1%;">
+   <textarea class="textarea-control" rows="7" column="10" formControlName="notes" maxlength="3000" ></textarea>
+   <div *ngIf="submitted && f['notes'].errors?.['required']">*notes is required.</div>
+   
+
+   <!-- <mat-error *ngIf="f.notes.errors?.maxlength">Notes can be max 500 characters long</mat-error> -->
+ </div>
+ </div>
+
+
+
+ 
+
+</div>
+<button class="btn btn-primary" >Submit</button>
+<button mat-button mat-dialog-close class="btn btn-success">Close</button>
+</form></div>
+
+</div>

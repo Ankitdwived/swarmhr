@@ -1,0 +1,405 @@
+<div class="container-fluid">
+    <div class="row" style="margin-top:10px;">
+    <div class="col-sm-4">
+    <h2 style="position:fixed">Project Confirm</h2></div><div class="col-sm-8">
+    <button mat-button mat-dialog-close class="btn btn-success" style="margin-left: 90%;"><i class="fa fa-times" aria-hidden="true"></i></button> 
+</div></div></div>
+<div class="container">
+<p class="semi-title" style="  background-color: #f5f5f5;font-size: medium;"><span >Placement Details</span></p>
+
+    <div class="container">
+<form [formGroup]="frmg" (ngSubmit)="postdata()">
+    <div class="form-row-des">
+        <div class="col-2">
+          <label class="required">Placement Title</label>
+        </div>
+        <div class="col-md-3">
+          <input class="line-input1 required"  matInput
+            formControlName="ptitle" placeholder="Enter Placement Title"
+            style="margin-left: 6px; margin-top: 2px;">
+            <div *ngIf="submitted && f['ptitle'].errors?.['required']">*Placement Title is required.</div>
+
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+          <label class="required">Client</label>
+        </div>
+        <div class="col-md-4">
+          <input class="line-input1 required" matInput formControlName="clientName"
+            placeholder="Search Client Name"style="margin-top: 2px;">         
+               <div *ngIf="submitted && f['clientName'].errors?.['required']">*Client  is required.</div>
+
+          </div>
+    
+    </div> 
+    <div class="form-row-des">
+        <div class="col-2">
+          <label class="required">Placement Type</label>
+        </div>
+        <div class="col-md-3">
+          <input class="line-input1 required"  matInput
+            formControlName="pltype" placeholder="Enter Placement Type"
+            style="margin-left: 6px; margin-top: 2px;">
+            <div *ngIf="submitted && f['pltype'].errors?.['required']">*Placement Type</div>
+
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+          <label class="required">Client Contact</label>
+        </div>
+        <div class="col-md-4">
+          <input class="line-input1 required" matInput formControlName="cliconta"
+            placeholder="Enter a Contact"style="margin-top: 2px;">
+            <div *ngIf="submitted && f['cliconta'].errors?.['required']">*Client Contact</div>
+
+           </div>
+    
+    </div>
+    
+    <div class="form-row-des">
+        <div class="col-2">
+          <label class="required">Actual Date Of Joining</label>
+        </div>
+        <div class="col-md-3">
+          
+            <input class="line-input1 required" matInput formControlName="doj"
+            placeholder="Enter a Contact"style="margin-top: 2px;">
+            <div *ngIf="submitted && f['doj'].errors?.['required']">*Actual Date Of Joining required</div>
+
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+          <label class="required">Contract End Date</label>
+        </div>
+        <div class="col-md-4">
+            <input class="line-input1 required" matInput formControlName="ced"
+            placeholder="Enter a Contact"style="margin-top: 2px;">
+            <div *ngIf="submitted && f['ced'].errors?.['required']">*Contract End Date required</div>
+
+            
+      </div>
+    
+    </div> 
+    <div class="form-row-des">
+        <div class="col-2">
+          <label class="required">Tentative Date Of Joining</label>
+        </div>
+        <div class="col-md-3">
+          
+           
+            <input class="line-input1 required" matInput formControlName="tdo"
+            placeholder="Enter a Contact"style="margin-top: 2px;">
+            <div *ngIf="submitted && f['tdo'].errors?.['required']">*Tentative Date Of Joining required</div>
+
+        </div>
+        <div class="col-1"></div>
+        <div class="col-2">
+          <label class="required">Add Documents</label>
+        </div>
+        <div class="col-md-4">
+            <div>
+              <input type="file" accept=".doc,.docx,.txt,.pdf" formControlName="adddocum"
+                class="fileInputStyle" id="fileInput1" style="margin-top: 2px;">
+                <div *ngIf="submitted && f['adddocum'].errors?.['required']">*Add Documents required</div>
+
+            </div>
+          </div>
+    </div>
+    <br><br>
+    <div class="form-row-des">
+        <div class="col-5" style="margin-top: -22px;">
+          <label class="commentLable">Comments</label>
+          <textarea rows="7" class="textareaStyle" maxlength="3000" style="font-size: 14px;width: 100%;"
+            formControlName="comment"></textarea>
+            <div *ngIf="submitted && f['comment'].errors?.['required']">* comment required</div>
+
+        </div></div><br><br><br>
+      <br><br>
+
+        <p class="semi-title" style="  background-color: #f5f5f5;font-size: 20px;"><span >Candidate Details</span></p>
+        <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Candidate Name</label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="cname" placeholder="Type at Least 3 Letter"
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['cname'].errors?.['required']">* Candidate Name required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">First Name</label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput formControlName="fname"
+                placeholder="Search Client Name"style="margin-top: 2px;">
+                <div *ngIf="submitted && f['fname'].errors?.['required']">*Name is required.</div>
+
+              </div>
+        
+        </div> 
+
+        <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Middle Name</label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="mname" placeholder="Enter  Middle Name"
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['mname'].errors?.['required']">* Middle Name required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Last Name</label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput formControlName="lname"
+                placeholder="Search Client Name"style="margin-top: 2px;">
+                <div *ngIf="submitted && f['lname'].errors?.['required']">* lname Name required</div>
+
+              </div>
+        
+        </div> 
+
+        <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Email</label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="email" placeholder="Enter a Email"
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['email'].errors?.['required']">* Email Name required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Phone</label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput formControlName="phno"
+                placeholder="Search Client Name"style="margin-top: 2px;">
+                <div *ngIf="submitted && f['phno'].errors?.['required']">* Phone no required</div>
+
+              </div>
+        
+        </div> 
+        <p class="semi-title" style="  background-color: #f5f5f5;font-size: 20px;"><span >Work Location Details</span></p>
+        <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Work Location Address 1
+            </label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="add1" placeholder="Enter Work Location Address 1
+                "style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['add1'].errors?.['required']">* Address no required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Work Location Address 2
+            </label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput 
+              formControlName="add2" placeholder="Search Client Name"style="margin-top: 2px;">
+              <div *ngIf="submitted && f['add2'].errors?.['required']">* Address no required</div>
+
+              </div>
+        
+        </div> 
+        <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Work Location Country
+            </label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="country" placeholder="Select Country"style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['country'].errors?.['required']">* country  required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Work Location State
+            </label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput formControlName="state" placeholder="Select State"style="margin-top: 2px;">
+              <div *ngIf="submitted && f['state'].errors?.['required']">* state  required</div>
+ 
+            </div>
+        
+        </div>     <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Work Location City</label>
+             </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="city" placeholder="Select city" style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['city'].errors?.['required']">* city  required</div>
+
+             </div>
+            <div class="col-1"></div>
+            
+        </div> 
+
+        <p class="semi-title" style="  background-color: #f5f5f5;font-size: 20px;"><span >Billing Details</span></p>
+        <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Bill Date
+            </label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="billdate" placeholder="Enter Work Location Address 1
+                "
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['billdate'].errors?.['required']">* billdate  required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Invoicing Date
+            </label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" 
+              matInput formControlName="invoicing" placeholder="Search Client Name"style="margin-top: 2px;">
+              <div *ngIf="submitted && f['invoicing'].errors?.['required']">* invoicing  required</div>
+
+              </div>
+        
+        </div> <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Bill Rate/Year (CTC)
+            </label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="billrate" placeholder="Bill Rate
+                "
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['billrate'].errors?.['required']">* billrate  required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Pay Rate/Hour 
+            </label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput formControlName="payrateh" placeholder="Search Client Name"style="margin-top: 2px;">
+              <div *ngIf="submitted && f['payrateh'].errors?.['required']">* Pay Rate/Hour  required</div>
+  
+            </div>
+        
+        </div> <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">One Time Placement Bill Type
+            </label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="oneplace" placeholder=""
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['oneplace'].errors?.['required']">* One Time Placement Bill Type  required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Invoice Amount
+            </label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput
+               formControlName="invammount" placeholder="Search Client Name"style="margin-top: 2px;">
+               <div *ngIf="submitted && f['invammount'].errors?.['required']">*Invoice Amount required</div>
+
+              </div>
+        
+        </div> <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Immigration Cost
+            </label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="immegracost" placeholder="Enter mmigration Cost
+                "
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['immegracost'].errors?.['required']">*Immigration Cost required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Insurance Cost
+            </label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput 
+              formControlName="insurancec" placeholder="Search Client Name"style="margin-top: 2px;">
+              <div *ngIf="submitted && f['insurancec'].errors?.['required']">*Insurance Cost required</div>
+
+              </div>
+        
+        </div> <br>
+        <p class="semi-title" style="  background-color: #f5f5f5;font-size: 20px;"><span >Recruitement Details</span></p>
+        <div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Requirement
+            </label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="requiremen" placeholder="Search Requirement Name
+                "
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['requiremen'].errors?.['required']">*Requirement required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Recruiter
+            </label>
+            </div>
+            <div class="col-md-4">
+              <input class="line-input1 required" matInput
+               formControlName="recruiter" placeholder="Select Recruiter"style="margin-top: 2px;">
+               <div *ngIf="submitted && f['recruiter'].errors?.['required']">*Recruiter required</div>
+
+              </div>
+        
+        </div><div class="form-row-des">
+            <div class="col-2">
+              <label class="required">Account Manager
+            </label>
+            </div>
+            <div class="col-md-3">
+              <input class="line-input1 required"  matInput
+                formControlName="accmanager" placeholder="Enter Account Manager
+                "
+                style="margin-left: 6px; margin-top: 2px;">
+                <div *ngIf="submitted && f['accmanager'].errors?.['required']">*Account Manager required</div>
+
+            </div>
+            <div class="col-1"></div>
+            <div class="col-2">
+              <label class="required">Submission ID
+            </label>
+            </div>
+            <div class="col-md-4">
+              <input class="y-input1 required" matInput
+               formControlName="submissis" placeholder="Enter  submission id"style="margin-top: 2px;">
+               <div *ngIf="submitted && f['submissis'].errors?.['required']">*Submission ID required</div>
+
+              </div>
+        
+        </div><br><br><button class="btn btn-primary"style=" margin-left: 85%;">Submit</button>
+</form></div></div>

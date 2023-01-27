@@ -1,0 +1,42 @@
+<div class="jumbotron"*ngIf="show" >
+    <div class="row">
+        <div class="container">
+           <!--<div class="col-md-8 offset-md-2" *ngIf='authKey'>
+    
+            </div>-->
+            <div class="col-lg-4 offset-md-4 offset-lg-4 col-sm-6 col-md-4">
+                <div align="center">
+                    <a style="margin-top:-8px;" href="https://www.swarmhr.com"><img src="assets/logoWebApp.png" alt="SWARM HR"/></a>
+                    <h3  style="padding-top:24px;padding-bottom:6px">Sign in</h3>
+                </div>
+    
+                    <form [formGroup]="frmm" (ngSubmit)="Login()">
+                        <div class="form-group">
+                            <label for="name">Username</label>
+                            <input type="text" formControlName="name" class="form-control"
+                            >
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Password</label>
+                            <input type="password" formControlName="password" class="form-control" 
+                           >
+                        </div>
+                        <div class="form-group">
+                            <button  class="btn btn-primary">Login</button>
+                            <!-- <img *ngIf="loading" class="pl-3" src="data:image/gif;base64,R0lGODlhEAAQAPIAAP///wAAAMLCwkJCQgAAAGJiYoKCgpKSkiH/C05FVFNDQVBFMi4wAwEAAAAh/hpDcmVhdGVkIHdpdGggYWpheGxvYWQuaW5mbwAh+QQJCgAAACwAAAAAEAAQAAADMwi63P4wyklrE2MIOggZnAdOmGYJRbExwroUmcG2LmDEwnHQLVsYOd2mBzkYDAdKa+dIAAAh+QQJCgAAACwAAAAAEAAQAAADNAi63P5OjCEgG4QMu7DmikRxQlFUYDEZIGBMRVsaqHwctXXf7WEYB4Ag1xjihkMZsiUkKhIAIfkECQoAAAAsAAAAABAAEAAAAzYIujIjK8pByJDMlFYvBoVjHA70GU7xSUJhmKtwHPAKzLO9HMaoKwJZ7Rf8AYPDDzKpZBqfvwQAIfkECQoAAAAsAAAAABAAEAAAAzMIumIlK8oyhpHsnFZfhYumCYUhDAQxRIdhHBGqRoKw0R8DYlJd8z0fMDgsGo/IpHI5TAAAIfkECQoAAAAsAAAAABAAEAAAAzIIunInK0rnZBTwGPNMgQwmdsNgXGJUlIWEuR5oWUIpz8pAEAMe6TwfwyYsGo/IpFKSAAAh+QQJCgAAACwAAAAAEAAQAAADMwi6IMKQORfjdOe82p4wGccc4CEuQradylesojEMBgsUc2G7sDX3lQGBMLAJibufbSlKAAAh+QQJCgAAACwAAAAAEAAQAAADMgi63P7wCRHZnFVdmgHu2nFwlWCI3WGc3TSWhUFGxTAUkGCbtgENBMJAEJsxgMLWzpEAACH5BAkKAAAALAAAAAAQABAAAAMyCLrc/jDKSatlQtScKdceCAjDII7HcQ4EMTCpyrCuUBjCYRgHVtqlAiB1YhiCnlsRkAAAOwAAAAAAAAAAAA==" /> -->
+                            <!--<a style="float:right;padding-top:14px;" routerLink="" class="btn btn-link">Forgot Password</a>-->
+                        </div>
+                    </form>
+            </div>
+            <div>
+                <p style="text-align:center;margin-bottom:-37px;margin-top:54px;">By signing in, you agree to our <a href="https://www.swarmhr.com/terms" target="_blank">Terms of Usage</a> and accept our <a href="https://www.swarmhr.com/privacy" target="_blank">Privacy Policy</a>.</p>
+            </div> 
+        </div>
+    </div>
+</div>
+<!-- credits -->
+<div class="footer text-center">
+    <p><a href="https://app.swarmhr.com/signin" target="_blank">ATS Application - SWARM HR</a></p>
+    <p><a href="https://www.swarmhr.com" target="_blank">www.swarmhr.com</a></p>
+</div>
+    <router-outlet></router-outlet>

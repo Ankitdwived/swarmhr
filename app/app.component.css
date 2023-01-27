@@ -1,0 +1,285 @@
+.navbar {
+    /* -webkit-box-shadow: 0 8px 6px -6px #999;
+    -moz-box-shadow: 0 8px 6px -6px #999;
+    box-shadow: 0 8px 6px -6px #999; */
+    background-color: #192a56 !important;
+    font-size: 15.5px !important;
+    font-family: 'Proxima Nova', Georgia, sans-serif !important;
+    padding: 3px 16px !important;
+}
+
+
+.navbar-login-session
+{
+    padding: 10px;
+    padding-bottom: 0px;
+    padding-top: 0px;
+}
+
+.dropdown-menu {
+    background-color: #fff !important;
+    -webkit-box-shadow: 0 4px 7px rgb(0 0 0 / 12%);
+    box-shadow: 0 4px 7px rgb(0 0 0 / 12%);
+    position: fixed;
+    z-index: 999999;
+    top: 31px;
+    left: -289px;
+	border-radius:3px 3px 3px 3px;
+}
+.icon-size
+{
+    font-size: 87px;
+}
+@media only screen and (max-width : 991.5px) {
+    .dropdown-menu {
+        top: 25px;left: 34px;height: 270px;
+    }
+    .icon-size { font-size: 70px; }
+    .margin-mobile-zero{margin-bottom: 0;}
+    .margin-mobile-five{margin-bottom: 10px;}
+}
+
+/* for Job boardings */
+.third-level-menu
+{
+    position: absolute;
+    top: 0px;
+    left: -180px;
+    right: 180px;
+    width: 180px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    z-index: 999999;
+}
+
+.third-level-menu > li
+{
+    position: relative;
+    height: 30px;
+    background: #192a56;
+}
+.third-level-menu > li:hover { background:#ccc; }
+.second-level-menu
+{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    width: 170px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    z-index: 999999;
+}
+.second-level-menu1 {
+    position: absolute;
+    top: 27px;
+    left: -32px;
+    width: 180px;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    z-index: 999999;
+    background: #192a56;
+    cursor: pointer;
+}
+
+.second-level-menu > li, second-level-menu1 > li
+{
+    position: relative;
+    height: 30px;
+    background: #192a56;
+}
+.second-level-menu > li:hover { background:#ccc; }
+.second-level-menu1 > li:hover { background:#ccc; }
+
+.top-level-menu
+{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.top-level-menu > li
+{
+    position: relative;
+    float: left;
+    height: 30px;
+    width: 86px;
+    background: #192a56;
+}
+.top-level-menu > li:hover { background:transparent !important; }
+
+.top-level-menu li:hover > ul
+{
+    /* On hover, display the next level's menu */
+    display: inline;
+}
+
+/* Menu Link Styles */
+.top-level-menu a {
+	color: rgba(255,255,255,.55);
+    text-decoration: none;
+    padding: 4.5px 0px 0 6px;
+    width: 103%;
+    display: block;
+    line-height: 30px;
+    font-size: 15.5px !important;
+    font-family: 'Proxima Nova', Georgia, sans-serif !important;
+    font-weight: 500;
+}
+	
+.top-level-menu a:hover {
+	color: #ffffffde
+}
+/* for email  */
+
+.top-level-menu1 > li
+{
+    position: relative;
+    float: right;
+    height: 30px;
+    /* width: 86px; */
+    background: #192a56;
+}
+.top-level-menu1 > li:hover { background:transparent !important; }
+
+.top-level-menu1 li:hover > ul
+{
+    /* On hover, display the next level's menu */
+    display: inline;
+}
+
+/* Menu Link Styles */
+.top-level-menu1 a {
+	color: rgba(255,255,255,.55);
+    text-decoration: none;
+    padding: 3px 0px 0 10px;
+    display: block;
+    line-height: 30px;
+    font-size: 15.5px !important;
+    font-family: 'Proxima Nova', Georgia, sans-serif !important;
+    font-weight: 500;
+}
+
+.top-level-menu1 a:hover {
+	color: #ffffffde
+}
+
+.mat-raised-button {
+    line-height: 34px;
+    padding: 0 14px;
+    font-weight: 400;
+}
+.divHt {
+    margin-top: -23px;
+}
+@media (max-width: 1434px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        font-size: 14.5px !important;
+        padding-right: 0px !important;
+        padding-left: 9px !important;
+        }
+    .top-level-menu > li > a {
+        font-size: 14.5px !important;
+        font-weight: 400 !important;
+    }
+    .navbar-brand {
+        font-size: 14.5px !important;
+    }
+    li.dropdown > a {
+        font-size: 14.5px !important;
+    }
+}
+@media (max-width: 1400px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        font-size: 14px !important;
+        padding-right: 0px !important;
+        padding-left: 9px !important;
+        }
+    .top-level-menu > li > a {
+        font-size: 14px !important;
+        font-weight: 400 !important;
+    }
+    .navbar-brand {
+        font-size: 14px !important;
+    }
+    li.dropdown > a {
+        font-size: 14px !important;
+    }
+}
+@media (max-width: 1271px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        font-size: 13.5px !important;
+        }
+    .top-level-menu > li > a {
+        font-size: 13.5px !important;
+    }
+    .navbar-brand {
+        font-size: 13.5px !important;
+    }
+    li.dropdown > a {
+        font-size: 13.5px !important;
+    }
+}
+@media (max-width: 1193px){
+    .navbar-expand-lg .navbar-nav .nav-link {
+        font-size: 13px !important;
+        padding-right: 0px !important;
+        padding-left: 4px !important;
+        }
+    .top-level-menu  > li > a{
+        font-size: 13px !important;
+        font-weight: 400 !important;
+        padding: 2px 0px 0px 5px !important;
+    }
+    .navbar-brand {
+        font-size: 13px !important;
+    }
+    li.dropdown > a {
+        font-size: 13px !important;
+    }
+}
+@media (max-width: 991px){
+    li.dropdown > a {
+        float: right;
+    }
+    .divHt {
+        margin-top: -11px;
+    }
+}
+@media only screen and (max-width: 991.5px){
+    .dropdown-menu {
+        height: 72%;
+    }
+    .mega-menu {
+        position: fixed !important;
+        width: 500px;
+        top: 46px !important;
+        right: 31px !important;
+        overflow-y: auto;
+    }
+}
+.active {
+    color: #e1e1e1 !important
+}
+.second-level-menu-report > .row .col-md-4 {
+    background: #192a56;  
+}
+.second-level-menu-report
+{
+    position: absolute;
+    top: 34px;
+    left: -16vw;
+    width: 55vw;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: none;
+    z-index: 999999;
+}
+
+

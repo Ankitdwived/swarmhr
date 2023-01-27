@@ -1,0 +1,45 @@
+<br><br><div class="container-fluid"><div class="row">
+    <div class="search" class="col-lg-6 col-md-6 col-sm-12 prc1">
+        <input type="text" class="form-control search-slt" id="search"  placeholder="Search..." search (keyup)="applyFilter($event )" #input>
+    </div>
+<div class="col-md-4">
+<button type="button" class="btn btn-primary add-recruitment-btn" style="margin-left:40%" (click)="addVendor()"><b>+</b>&nbsp;Customer </button>
+  </div></div></div><br>
+  <section class="example-container mat-elevation-z8" tabindex="0">
+
+<table mat-table [dataSource]="datasource">
+
+  <!-- Position Column -->
+  <ng-container matColumnDef="id">
+    <th mat-header-cell *matHeaderCellDef> No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.id}} </td>
+  </ng-container>
+
+  <!-- Name Column -->
+  <ng-container matColumnDef="name">
+    <th mat-header-cell *matHeaderCellDef> Name </th>
+    <td mat-cell *matCellDef="let element"> {{element.name}} </td>
+  </ng-container>
+
+  <!-- Weight Column -->
+  <ng-container matColumnDef="add">
+    <th mat-header-cell *matHeaderCellDef> Address </th>
+    <td mat-cell *matCellDef="let element"> {{element.add}} </td>
+  </ng-container>
+
+  <!-- Symbol Column -->
+  <ng-container matColumnDef="phno">
+    <th mat-header-cell *matHeaderCellDef> Mobile No. </th>
+    <td mat-cell *matCellDef="let element"> {{element.phno}} </td>
+  </ng-container>
+  <ng-container matColumnDef="phno2">
+    <th mat-header-cell *matHeaderCellDef> Mobile No2. </th>
+    <td mat-cell *matCellDef="let element"> {{element.phno2}} </td>
+  </ng-container>
+
+  <tr mat-header-row *matHeaderRowDef="displayColumn; sticky: true"></tr>
+  <tr mat-row *matRowDef="let row; columns: displayColumn;"></tr>
+</table>
+
+</section>    <mat-paginator [pageSizeOptions]="[8,10,20]" aria-label="select page of user" class="page"></mat-paginator>
+

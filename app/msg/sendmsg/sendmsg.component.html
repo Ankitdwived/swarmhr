@@ -1,0 +1,61 @@
+<div class="container">
+  <div class="row">
+    <div class="col-auto mr-auto">
+      &nbsp;<h5>New Message</h5>
+    </div>
+
+    <div class="col-auto mr-auto">
+     
+        <button mat-button mat-dialog-close class="ak" style="margin-left: 95%;">  <span class="mdi mdi-24px fa fa-times-circle" mat-button ngbTooltip="Close" placement="bottom" tooltipClass="search-custom-class"  
+          style="color: red;float: right;font-size: 26px;cursor: pointer;"> </span></button>
+    </div>
+
+  </div>
+
+  <form name="sendSMS"[formGroup]="sendingSMSDataForm" (ngSubmit)="sendMessageToContact()">
+
+    <div class="modal-body text-recruiter-body form-row-des customLine" id="modal-body">
+      <div class="row">
+        <div class=col-1> <label class="required " style="margin-left: 1px !important;">Country Code</label>
+        </div>
+
+        <div class=" col-sm-1">
+
+          <input style="width: 44px;text-align: center;" class="line-input required" matInput
+            formControlName="countryCode" type="text" id="mobileNo" name="mobileNo" placeholder="+91" maxlength="3"
+            size="4" >
+        </div>
+        <div class=col-1> <label class="required">phoneNo</label>
+        </div>
+        <div class=" col-lg-8 full-width">
+          <input style="width:1200px" class="line-input required" matInput type="text"
+            formControlName="phoneNo" ng-model="candidates_number" name="numbers" id="numbers"
+            placeholder="Enter mobile numbers with comma separated">
+           
+        </div>
+      </div>
+    </div>
+
+
+    <br>
+    <div class="form-row">
+      <div class="col-md-12 mb-12 mb-3">
+        <h5 style="margin-top: -164px;">Message</h5>
+        <div>
+          <textarea class="form-control  " formControlName="textMessage" name="message" id="message" rows="8" cols="100"
+            type="text" ng-model="candidate_sms_body" maxlength="250" required="" placeholder="Type a message here"
+            required='required'
+            style="width: 100%;border-radius: 5px; height:196px !important; font-size: 14px !important;"
+             ></textarea>
+
+
+   </div>
+      </div>
+    </div>
+
+    <button ng-click="send_multiple_sms()" class="btn btn-primary SMS" ng-disabled="sendBtn">Send SMS</button>
+    <button class=" btn Close" mat-button >Cancel</button>
+
+  </form>
+
+</div>
